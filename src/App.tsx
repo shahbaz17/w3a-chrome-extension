@@ -4,7 +4,6 @@ import { CHAIN_NAMESPACES, SafeEventEmitterProvider } from '@web3auth/base';
 import { OpenloginAdapter } from '@web3auth/openlogin-adapter';
 import './App.css';
 import RPC from './web3RPC'; // for using web3.js
-//import RPC from "./ethersRPC"; // for using ethers.js
 
 const clientId =
 	'BHr_dKcxC0ecKn_2dZQmQeNdjPgWykMkcodEHkVvPMo71qzOV6SgtoN8KCvFdLN7bf34JOm89vWQMLFmSfIo84A'; // get from https://dashboard.web3auth.io
