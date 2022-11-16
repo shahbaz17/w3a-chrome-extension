@@ -14,6 +14,7 @@ function App() {
 	const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(
 		null,
 	);
+	const [isFullPage, setIsFullPage] = useState(false);
 
 	useEffect(() => {
 		const init = async () => {
@@ -47,7 +48,6 @@ function App() {
 							defaultLanguage: 'en',
 							dark: true, // whether to enable dark mode. defaultValue: false
 						},
-						redirectUrl: 'chrome-extension://ijbcdlenaccolbimelhpcgoomgiegmdk',
 					},
 				});
 				web3auth.configureAdapter(openloginAdapter);
@@ -64,6 +64,8 @@ function App() {
 		};
 
 		init();
+
+		if (window.innerWidth > 400) setIsFullPage(true);
 	}, []);
 
 	const login = async () => {
@@ -224,9 +226,20 @@ function App() {
 	);
 
 	const unloggedInView = (
-		<button onClick={login} className='card login'>
-			Login
-		</button>
+		<>
+			{!isFullPage ? (
+				<button
+					onClick={() => chrome.tabs.create({ url: 'index.html' })}
+					className='card login'
+				>
+					Login
+				</button>
+			) : (
+				<button onClick={login} className='card login'>
+					Login
+				</button>
+			)}
+		</>
 	);
 
 	return (
