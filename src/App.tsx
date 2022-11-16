@@ -22,7 +22,8 @@ function App() {
 					clientId,
 					chainConfig: {
 						chainNamespace: CHAIN_NAMESPACES.EIP155,
-						chainId: '0x5',
+						chainId: '0x13881',
+						rpcTarget: 'https://rpc.ankr.com/polygon_mumbai',
 					},
 					uiConfig: {
 						theme: 'dark',
