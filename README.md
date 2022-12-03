@@ -3,7 +3,7 @@
 ## QuickStart
 
 ```bash
-git clone
+git clone https://github.com/shahbaz17/w3a-chrome-extension.git
 cd w3a-chrome-extension
 npm run install && npm run build
 ```
